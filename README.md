@@ -1,10 +1,11 @@
 # Root Cause Detection Framework
 
 A machine learning framework for detecting and analyzing root causes in business process event logs, with a focus on terminology variations and workload patterns.
+Various Python libraries are used, such as pandas for data pre-processing, scikit-learn for machine learning, and shap for XAI. The core class, LoopRunning, initialises a RandomForestClassifier and handles feature encoding, model training, and performance evaluation. It trains the classifier and evaluates its performance using metrics like classification reports and AUC-ROC curves. It also uses multiple predefined patterns. The explanation module helps interpret model predictions, with SHAP values providing insights into feature importance.
 
 ## Overview
 
-This framework analyzes business process event logs to detect various patterns and root causes of terminology variations. It implements multiple analysis approaches including:
+This framework analyzes business process event logs to detect various patterns and root causes of imperfections. It implements multiple analysis approaches including:
 
 - Frequency-based feature analysis
 - Classification of terminology patterns
