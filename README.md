@@ -8,8 +8,8 @@ Various Python libraries are used, such as pandas for data pre-processing, sciki
 This framework analyzes business process event logs to detect various patterns and root causes of imperfections. It implements multiple analysis approaches including:
 
 - Frequency-based feature analysis
-- Classification of terminology patterns
-- Workload pattern detection
+- Classification of root cause patterns
+- root cause pattern detection
 - Probability calculation for root causes
 
 ## Features
@@ -35,12 +35,11 @@ This framework analyzes business process event logs to detect various patterns a
 ```bash
 git clone https://github.com/ShokoufehGh/RootCauseDetectionFramework.git
 cd RootCauseDetectionFramework
-pip install -r requirements.txt
 ```
 
 ## Usage
 
-1. Prepare your input CSV file with event log data
+1. Prepare your input (event log data)
 2. Configure the input parameters in `main.py`
 3. Run the analysis:
 
@@ -86,21 +85,8 @@ The framework generates:
 - Probability distributions
 - Metric calculations
 
-## Citation
-
-If you use this framework in your research, please cite:
-
-```bibtex
-@thesis{YourName2025,
-    title={Root Cause Detection Framework for Business Process Event Logs},
-    author={Your Name},
-    year={2025},
-    school={Your University}
-}
-```
-
 ## Contact
 
-Your Name - your.email@example.com
+Shokoufeh Ghalibafan - s.ghalibafan@qut.edu.au
 
-Project Link: https://github.com/yourusername/RootCauseDetectionFramework
+Project Link: https://github.com/ShokoufehGh/RootCauseDetectionFramework
