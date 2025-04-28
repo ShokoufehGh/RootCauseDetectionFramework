@@ -1,7 +1,6 @@
 from filter_data import DataProcessor
-from classification import (
-    run_pattern,
-)
+from classification import run_pattern
+from classification_only import analyse_log
 from frequency_features import main as frequency_features_main
 from additional_feature_final_version import print_analysis
 from probability_calculation import main as probability_calculation_main
@@ -27,10 +26,32 @@ if __name__ == "__main__":
         'configuration': [[0.2, 0.3]]
     }
     
-    report, frequencies, importance_values = run_pattern(csv_url, input_data_pattern4)
+    need_inject = False
+    if(need_inject):
+        report, frequencies, importance_values = run_pattern(csv_url, input_data_pattern4)
+    else:        
+        csv_url = 'data/version2WithFeatures.csv'
+        features = [
+            'user_day_of_month_workload',
+            'user_workload',
+            # 'resource_type',
+            # 'day_of_month',  
+            # 'month',
+            # 'year',
+            # 'day_of_week',
+            'month_of_year_workload',
+            'day_of_month_workload',
+            'day_of_week_workload',
+            'resource'
+        ]
+        column_name = 'ActionTakenToComply (CA)'
+        Label_number = 'Label1109Inspectionv4'   
+        synonyms =[ "See attachment", "See attached email.", "email attached"]
+        report, frequencies, importance_values = analyse_log(csv_url, synonyms, column_name, Label_number, features)
     
     print("Classification Report:", report)    
     print("Frequencies:", frequencies)
+    print("Importance Values:", importance_values)
     
     
     human_labels = ["Record Invoice Receipt"] 

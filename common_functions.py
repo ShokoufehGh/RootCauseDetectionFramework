@@ -7,7 +7,7 @@ def main():
 def filter_sub_log(df, concept_name, labels_set):
     df = df.copy() #  'event concept:name' is concept_name
     print(f"Original input size: {len(df)}")
-    df = df[df['event concept:name'].isin(labels_set)]
+    df = df[df[concept_name].isin(labels_set)]
     print(f"Sub log input size: {len(df)}")
     return df
 
